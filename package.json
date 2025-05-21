@@ -1,0 +1,26 @@
+{
+  "name": "jsonx-language",
+  "displayName": "JSONX Syntax Highlighting",
+  "description": "VSCode language support for JSONX",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "jsonx",
+      "aliases": ["jsonx", "jsonx"],
+      "extensions": [".jsonx", ".jx"],
+      "configuration": "./language-configuration.json",
+      "icon": {"dark": "logo.png", "light": "logo.png"}
+    }],
+    "grammars": [{
+      "language": "jsonx",
+      "scopeName": "source.jsonx",
+      "path": "./syntaxes/jsonx.tmLanguage.json"
+    }]
+  }
+}

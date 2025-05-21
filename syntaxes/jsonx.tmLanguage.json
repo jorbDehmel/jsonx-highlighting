@@ -1,0 +1,95 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "jsonx",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#singleStrings"
+		},
+		{
+			"include": "#doubleStrings"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#blockComments"
+		},
+		{
+			"include": "#lineComments"
+		}
+	],
+	"repository": {
+		"blockComments": {
+			"begin": "/\\*",
+			"end": "\\*/",
+			"name": "comment.block.jsonx",
+			"patterns": [
+				{
+					"match": "\\@\\w+",
+					"name": "keyword.other.doxygen.jsonx"
+				},
+				{
+					"match": "TODO|NOTE",
+					"name": "keyword.other.doxygen.jsonx"
+				},
+				{
+					"include": "#blockComments"
+				}
+			]
+		},
+		"lineComments": {
+			"patterns": [
+				{
+					"match": "//.*",
+					"name": "comment.line.double-slash.jsonx"
+				}
+			]
+		},
+		"singleStrings": {
+			"begin": "'",
+			"end": "'",
+			"name": "string.quoted.single.jsonx",
+			"patterns": [
+				{
+					"match": "\\\\.",
+					"name": "constant.character.escape.jsonx"
+				}
+			]
+		},
+		"doubleStrings": {
+			"begin": "\"",
+			"end": "\"",
+			"name": "string.quoted.double.jsonx",
+			"patterns": [
+				{
+					"match": "\\\\.",
+					"name": "constant.character.escape.jsonx"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"match": "\\b(true|false|_|self|env|parent|global)\\b",
+					"name": "keyword.other.jsonx"
+				}
+			]
+		},
+		"storage": {
+			"patterns": [
+				{
+					"match": "\\b[a-zA-Z0-9_]+\\b",
+					"name": "variable.name.jsonx"
+				},
+				{
+					"match": "\\b(=>|!|\\?|\\.|:|;|,)\\b",
+					"name":"keyword.operator.jsonx"
+				}
+			]
+		}
+	},
+	"scopeName": "source.jsonx"
+}

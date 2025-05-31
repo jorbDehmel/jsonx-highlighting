@@ -4,8 +4,13 @@
   "description": "VSCode language support for JSONX",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.97.0"
+    "vscode": "^1.90.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jorbDehmel/jsonx-highlighting.git"
+  },
+  "publisher": "jdehmel",
   "categories": [
     "Programming Languages"
   ],

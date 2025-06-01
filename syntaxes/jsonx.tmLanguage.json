@@ -70,6 +70,17 @@
 				}
 			]
 		},
+		"backtickStrings": {
+			"begin": "`",
+			"end": "`",
+			"name": "string.quoted.backtick.jsonx",
+			"patterns": [
+				{
+					"match": "\\\\.",
+					"name": "constant.character.escape.jsonx"
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [
 				{
